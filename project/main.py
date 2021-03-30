@@ -5,6 +5,11 @@ from .gcalendar import getEvents
 from datetime import datetime
 from twilio.rest import Client
 from werkzeug.exceptions import HTTPException
+import logging
+import time
+
+fname = 'log'+datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")+'.log'
+logging.basicConfig(filename=fname, level=logging.INFO)
 
 main = Blueprint('main', __name__)
 
@@ -27,7 +32,7 @@ def dashboard():
         status = False
         print('[INFO] Start Getting data from Google API.')
         events = getEvents.main()
-        print(events)
+        logging.info(events)
         print('[INFO] Execute Successfully.')
         status_list = []
         if events == 'No upcoming events found.':
@@ -66,6 +71,7 @@ def dashboard():
             return render_template('dashboard.html', name=current_user.name,context=events,title=title,status=status_list) 
     except Exception as e:
         print('[ERROR] ',e)
+        logging.error(e)
     return render_template('dashboard.html', name=current_user.name,title=title)
 
 @main.route('/edit/<string:cal_id>', methods=['GET','POST'])
