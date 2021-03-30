@@ -27,6 +27,7 @@ def dashboard():
         status = False
         print('[INFO] Start Getting data from Google API.')
         events = getEvents.main()
+        print(events)
         print('[INFO] Execute Successfully.')
         status_list = []
         if events == 'No upcoming events found.':
