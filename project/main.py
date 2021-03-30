@@ -40,25 +40,25 @@ def dashboard():
                 elif event['summary'].split(' ')[0] == 'PostReminder'\
                     or event['summary'].split(' ')[0] == 'POSTReminder':
                         cont_no = event['summary'].split(' ')[1]
-                        message = client.messages \
-                                    .create(
-                                        body='description',
-                                        from_='+18183505192',
-                                        to='+91'+cont_no
-                                    )    
-                        print(message.sid,event['id'])
+                        # message = client.messages \
+                        #             .create(
+                        #                 body='description',
+                        #                 from_='+18183505192',
+                        #                 to='+91'+cont_no
+                        #             )    
+                        # print(message.sid,event['id'])
                         
                         flash(f'Messsage sended to the {cont_no}') 
                         status = 'PostReminder' 
                 elif event['summary'].split(' ')[0] == 'Send':
                     cont_no = event['summary'].split(' ')[1]
-                    message = client.messages \
-                                .create(
-                                     body='description',
-                                     from_='+18183505192',
-                                     to='+91'+cont_no
-                                 )    
-                    print(message.sid,event['id'])
+                    # message = client.messages \
+                    #             .create(
+                    #                  body='description',
+                    #                  from_='+18183505192',
+                    #                  to='+91'+cont_no
+                    #              )    
+                    # print(message.sid,event['id'])
                     
                     flash(f'Messsage sended to the {cont_no}')
                     status = 'Send'
