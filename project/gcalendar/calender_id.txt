@@ -1,0 +1,17 @@
+"id": "randy@fightonmentality.com", "primary"
+"summary": "randy@fightonmentality.com",
+
+"id": "c_a99k2hl4qev47mbm0e4sjkbrp8@group.calendar.google.com",
+"summary": "FOM - Non Paid Reminders",
+
+"id": "en.usa#holiday@group.v.calendar.google.com",
+"summary": "Holidays in United States",
+
+"id": "addressbook#contacts@group.v.calendar.google.com",
+"summary": "Birthdays",
+
+"id": "c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com",
+"summary": "FOM - Paid Reminders",
+
+"id": "c_9h05u39ads8bqt1oln2r4bna3s@group.calendar.google.com",
+"summary": "FOM - Send",

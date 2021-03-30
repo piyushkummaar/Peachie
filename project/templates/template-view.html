@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+             <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">Admin</a>
+                <a href="{{url_for('main.editform',cal_id=event_id)}}" class="list-group-item list-group-item-action">General</a>
+                <a href="{{url_for('main.template',event_id=event_id)}}" class="list-group-item list-group-item-action">Templates</a>
+                
+                <a href="#" onclick="fun(alert('More service added soon!!'))" class="list-group-item list-group-item-action disabled">More...</a>
+              </div>
+        </div>
+        <div class="col-md-9">
+        <div class="card shadow">
+            <div class="card-body">
+            <form method="POST" action="">
+                <fieldset>
+                  <h1>Template</h1>
+                    <div class="form-group">
+                      <label class="text-muted" for="exampleFormControlTextarea3">Please write down message here.</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea3" rows="7" placeholder="{{des}}"></textarea>
+                      <p class="text-info ml-auto">The above template work one time to this Event ID : {{event_id}}</p>
+                    </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </fieldset>
+              </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}

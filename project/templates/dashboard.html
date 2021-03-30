@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <div class="jumbotron mt-5">
+  <div class="col-sm-8 mx-auto">
+    <h1>Welcome </h1>
+    <p>{{ name }}!</p>
+    <p>
+      <a class="btn btn-primary" href="#" role="button">Add More Fun" »</a>
+    </p>
+  </div>
+</div> -->
+<div class="container mt-5">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Well done!</strong> All messages are sync {{message}} .
+    </div>
+    {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <div class="row">
+      <div class="col-md-4">
+        <button type="button" class="btn btn-primary btn-lg btn-block">My Calender</button>
+        <hr>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">All Events <i class="fa fa-calendar"></i></a>             
+            {% if context %}
+            {% for k in context %} 
+            <a href="{{ k.htmlLink }}" class="list-group-item list-group-item-action">{{ k.summary }}</a>             
+          {% endfor %}
+          {%else%}
+          <a href="#" class="list-group-item list-group-item-action">No Events</a>             
+          {%endif%}
+        </div>
+      </ul>
+      </div>
+      <div class="col-md-8">
+        <button type="button" class="btn btn-primary btn-lg btn-block">List of all Targets events</button> 
+        <hr>
+        {% if context %}
+        {% for data in context %}
+        {% if data.summary.split(' ')[0] == 'Send' or data.summary.split(' ')[0] == 'PREReminder' or data.summary.split(' ')[0] == 'PreReminder' or data.summary.split(' ')[0] == 'POSTReminder' or data.summary.split(' ')[0] == 'PostReminder'%}
+          <div class="list-group mt-4">
+            <div href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ data.summary }}</h5>
+                <a href="{{ url_for('main.editform',cal_id=data.id)  }}"><i class="fa fa-edit" style="font-size:24px"></i></a>
+              </div>
+              <hr>
+                <p class="mb-1">Event Name : {{ data.summary }}</p>
+                <p>Event Description : {{ data.description }}</p>
+                <small>Event Start Time : {{ data.start['dateTime'] }}</small>
+                <small>Event End Time : {{ data.end['dateTime'] }}</small>    
+            </div>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                <small class="text-muted"><i class="fa fa-envelope" aria-hidden="true"></i> {{ data.creator['email'] }} 
+                  {% if status == "PostReminder" %}<i class="fa fa-check" aria-hidden="true" style="color: white;"></i>Message sent
+                  {% elif status == "PreReminder" %}<i class="fa fa-clock-o" aria-hidden="true" style="color: white;"></i> Message sent in 12hr
+                  {% elif status == "Send" %}<i class="fa fa-clock-o" aria-hidden="true" style="color: white;"></i> Message sent in 4hr
+                  {% endif %}
+                </small>
+                <small class="text-muted">{{ data.start['dateTime'] }}</small>
+              </div>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}  
+        {%else%}
+        <div class="list-group mt-4">
+          <div href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">No upcoming events found.</h5>
+            </div>
+          </div>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+          </a>
+      </div>
+        {%endif%}               
+    </div>
+  </div>
+</div>
+<br>
+{% endblock %}
