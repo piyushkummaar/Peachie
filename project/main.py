@@ -7,14 +7,20 @@ from twilio.rest import Client
 from werkzeug.exceptions import HTTPException
 import logging
 import time
+import os
 
-fname = 'log'+datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")+'.log'
+try:
+    os.makedirs("logs")
+except FileExistsError:
+    pass
+
+fname = 'logs/log'+datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")+'.log'
 logging.basicConfig(filename=fname, level=logging.INFO)
 
 main = Blueprint('main', __name__)
 
 account_sid = 'AC079c58693b2f2b23330d76a774f40000'
-auth_token = 'a2d5ded670338710ea89e2199e011320'
+auth_token = '5652f1b7c99cfe9f847049def71448b8'
 
 client = Client(account_sid, auth_token)
 
@@ -28,6 +34,7 @@ def index():
 @login_required
 def dashboard():
     try:
+        idcontainer = []
         title = 'SMS service reminder'
         status = False
         print('[INFO] Start Getting data from Google API.')
@@ -39,6 +46,7 @@ def dashboard():
             return render_template('dashboard.html', name=current_user.name,title=title)
         else: 
             for event in events:
+                idcontainer.append(event['id'])
                 if event['summary'].split(' ')[0] == 'PreReminder' \
                     or event['summary'].split(' ')[0] == 'PREReminder':
                         SaveID.append(event['id'])
@@ -53,21 +61,34 @@ def dashboard():
                         #                 to='+91'+cont_no
                         #             )    
                         # print(message.sid,event['id'])
-                        
                         flash(f'Messsage sended to the {cont_no}') 
                         status = 'PostReminder' 
                 elif event['summary'].split(' ')[0] == 'Send':
                     cont_no = event['summary'].split(' ')[1]
-                    # message = client.messages \
-                    #             .create(
-                    #                  body='description',
-                    #                  from_='+18183505192',
-                    #                  to='+91'+cont_no
-                    #              )    
-                    # print(message.sid,event['id'])
-                    
-                    flash(f'Messsage sended to the {cont_no}')
-                    status = 'Send'
+                    print(idcontainer)
+                    if event['id'] in idcontainer:
+                        flash(f'Messsage already sended to the {cont_no}')
+                    else:
+                        if not event['description']:
+                            message = client.messages \
+                                        .create(
+                                            body='Message',
+                                            from_='+18183505192',
+                                            to='+91'+cont_no
+                                        )
+                            idcontainer.append(event['id'])
+                            print(message.sid)
+                            flash(f'Messsage sended to the {cont_no}')
+                        message = client.messages \
+                                    .create(
+                                        body=event['description'],
+                                        from_='+18183505192',
+                                        to='+91'+cont_no
+                                    )    
+                        idcontainer.append(event['id'])
+                        print(message.sid)
+                        flash(f'Messsage sended to the {cont_no}')
+                        # status = 'Send'
             return render_template('dashboard.html', name=current_user.name,context=events,title=title,status=status_list) 
     except Exception as e:
         print('[ERROR] ',e)

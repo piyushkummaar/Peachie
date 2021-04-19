@@ -1,0 +1,28 @@
+WARNING:googleapiclient.discovery_cache:file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 33, in <module>
+    from oauth2client.contrib.locked_file import LockedFile
+ModuleNotFoundError: No module named 'oauth2client'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 37, in <module>
+    from oauth2client.locked_file import LockedFile
+ModuleNotFoundError: No module named 'oauth2client'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 44, in autodetect
+    from . import file_cache
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 41, in <module>
+    "file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth"
+ImportError: file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3235411324598000"', 'id': '1k6uam1hpv4ipbsd8h9kpculfs', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=MWs2dWFtMWhwdjRpcGJzZDhoOWtwY3VsZnMgY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-04-06T09:45:22.000Z', 'updated': '2021-04-06T11:32:32.383Z', 'summary': 'Send 7807445246', 'description': 'Hello Send a message.', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-04-06T06:00:00-07:00'}, 'end': {'dateTime': '2021-04-06T07:00:00-07:00'}, 'iCalUID': '1k6uam1hpv4ipbsd8h9kpculfs@google.com', 'sequence': 0, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/AC079c58693b2f2b23330d76a774f40000/Messages.json
+INFO:twilio.http_client:PAYLOAD: {'To': '+917807445246', 'From': '+18183505192', 'Body': 'Hello Send a message.'}
+INFO:twilio.http_client:POST Response: 201 {"sid": "SM6f5056cc4da54c978a6f910067bd529c", "date_created": "Tue, 06 Apr 2021 11:39:13 +0000", "date_updated": "Tue, 06 Apr 2021 11:39:13 +0000", "date_sent": null, "account_sid": "AC079c58693b2f2b23330d76a774f40000", "to": "+917807445246", "from": "+18183505192", "messaging_service_sid": null, "body": "Hello Send a message.", "status": "queued", "num_segments": "1", "num_media": "0", "direction": "outbound-api", "api_version": "2010-04-01", "price": null, "price_unit": "USD", "error_code": null, "error_message": null, "uri": "/2010-04-01/Accounts/AC079c58693b2f2b23330d76a774f40000/Messages/SM6f5056cc4da54c978a6f910067bd529c.json", "subresource_uris": {"media": "/2010-04-01/Accounts/AC079c58693b2f2b23330d76a774f40000/Messages/SM6f5056cc4da54c978a6f910067bd529c/Media.json"}}
+INFO:werkzeug:127.0.0.1 - - [06/Apr/2021 17:09:14] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Apr/2021 17:09:14] "[37mGET /static/sms4_43518.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\USER\\Desktop\\VCODE\\Peachie GREMINDER\\MainCode\\DEPLOY\\project\\main.py', reloading
