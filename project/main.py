@@ -8,6 +8,9 @@ from werkzeug.exceptions import HTTPException
 import logging
 import time
 import os
+import configparser
+
+config = configparser.ConfigParser()
 
 try:
     os.makedirs("logs")
@@ -19,8 +22,11 @@ logging.basicConfig(filename=fname, level=logging.INFO)
 
 main = Blueprint('main', __name__)
 
-account_sid = 'AC079c58693b2f2b23330d76a774f40000'
-auth_token = '5652f1b7c99cfe9f847049def71448b8'
+config.read('project/config/creds.ini')
+
+# Twilio Credentials
+account_sid = config.get("twilio.com","account_sid")
+auth_token = config.get("twilio.com","auth_token")
 
 client = Client(account_sid, auth_token)
 
@@ -49,18 +55,20 @@ def dashboard():
                 idcontainer.append(event['id'])
                 if event['summary'].split(' ')[0] == 'PreReminder' \
                     or event['summary'].split(' ')[0] == 'PREReminder':
-                        SaveID.append(event['id'])
+                        # SaveID.append(event['id'])
+                        flash(f'Messsage send with in 4hr to {cont_no}') 
                         status = 'PreReminder'
+
                 elif event['summary'].split(' ')[0] == 'PostReminder'\
                     or event['summary'].split(' ')[0] == 'POSTReminder':
-                        cont_no = event['summary'].split(' ')[1]
+                        cont_no = event['summary'].split(' ')[::-1][0]
                         # message = client.messages \
                         #             .create(
                         #                 body='description',
                         #                 from_='+18183505192',
-                        #                 to='+91'+cont_no
+                        #                 to='+917807445246'
                         #             )    
-                        # print(message.sid,event['id'])
+                        # print(message.sid," : ",event['id'])
                         flash(f'Messsage sended to the {cont_no}') 
                         status = 'PostReminder' 
                 elif event['summary'].split(' ')[0] == 'Send':
@@ -70,23 +78,24 @@ def dashboard():
                         flash(f'Messsage already sended to the {cont_no}')
                     else:
                         if not event['description']:
-                            message = client.messages \
-                                        .create(
-                                            body='Message',
-                                            from_='+18183505192',
-                                            to='+91'+cont_no
-                                        )
-                            idcontainer.append(event['id'])
-                            print(message.sid)
+                            pass
+                            # message = client.messages \
+                            #             .create(
+                            #                 body='Message',
+                            #                 from_='+18183505192',
+                            #                 to='+91'+cont_no
+                            #             )
+                            # idcontainer.append(event['id'])
+                            # print(message.sid)
                             flash(f'Messsage sended to the {cont_no}')
-                        message = client.messages \
-                                    .create(
-                                        body=event['description'],
-                                        from_='+18183505192',
-                                        to='+91'+cont_no
-                                    )    
-                        idcontainer.append(event['id'])
-                        print(message.sid)
+                        # message = client.messages \
+                        #             .create(
+                        #                 body=event['description'],
+                        #                 from_='+18183505192',
+                        #                 to='+91'+cont_no
+                        #             )    
+                        # idcontainer.append(event['id'])
+                        # print(message.sid)
                         flash(f'Messsage sended to the {cont_no}')
                         # status = 'Send'
             return render_template('dashboard.html', name=current_user.name,context=events,title=title,status=status_list) 

@@ -1,0 +1,52 @@
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:57:41] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:57:41] "[37mGET /static/sms4_43518.ico HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3237635205561000"', 'id': '24nt6agmuq7eeoc9v7d4fbmpto', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=MjRudDZhZ211cTdlZW9jOXY3ZDRmYm1wdG8gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-04-19T02:31:01.000Z', 'updated': '2021-04-19T07:33:22.964Z', 'summary': 'POSTReminder - Randy Narciso - 3108043279', 'description': "Hi {name}!  Good luck at your upcoming {whatType} event on {whenIs}.  Are you still feeling {in1}?  Here's a pre-event routine https://www.fightonmentality.com/prepare.html.\n\nFight ON!", 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-04-19T09:00:00-07:00'}, 'end': {'dateTime': '2021-04-19T10:00:00-07:00'}, 'iCalUID': '24nt6agmuq7eeoc9v7d4fbmpto@google.com', 'sequence': 0, 'reminders': {'useDefault': False}, 'eventType': 'default'}, {'kind': 'calendar#event', 'etag': '"3237647277599000"', 'id': '5dsvt41h5c2b3ajt7gcq08vap3', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NWRzdnQ0MWg1YzJiM2FqdDdnY3EwOHZhcDMgY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-04-19T02:31:26.000Z', 'updated': '2021-04-19T09:14:14.357Z', 'summary': 'PreReminder - Reid Narciso - 3108043279', 'description': "Hi {name}!  Good luck at your upcoming {whatType} event on {whenIs}.  Are you still feeling {in1}?  Here's a pre-event routine https://www.fightonmentality.com/prepare.html.\n\nFight ON!", 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-04-19T13:30:00-07:00'}, 'end': {'dateTime': '2021-04-19T14:30:00-07:00'}, 'iCalUID': '5dsvt41h5c2b3ajt7gcq08vap3@google.com', 'sequence': 0, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:57:44] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+WARNING:googleapiclient.discovery_cache:file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 33, in <module>
+    from oauth2client.contrib.locked_file import LockedFile
+ModuleNotFoundError: No module named 'oauth2client.contrib.locked_file'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 37, in <module>
+    from oauth2client.locked_file import LockedFile
+ModuleNotFoundError: No module named 'oauth2client.locked_file'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 44, in autodetect
+    from . import file_cache
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 41, in <module>
+    "file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth"
+ImportError: file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:58:04] "[37mGET /edit/5dsvt41h5c2b3ajt7gcq08vap3 HTTP/1.1[0m" 200 -
+WARNING:googleapiclient.discovery_cache:file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 33, in <module>
+    from oauth2client.contrib.locked_file import LockedFile
+ModuleNotFoundError: No module named 'oauth2client.contrib.locked_file'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 37, in <module>
+    from oauth2client.locked_file import LockedFile
+ModuleNotFoundError: No module named 'oauth2client.locked_file'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\__init__.py", line 44, in autodetect
+    from . import file_cache
+  File "c:\users\user\appdata\local\programs\python\python37\lib\site-packages\googleapiclient\discovery_cache\file_cache.py", line 41, in <module>
+    "file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth"
+ImportError: file_cache is unavailable when using oauth2client >= 4.0.0 or google-auth
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:58:09] "[37mPOST /edit/5dsvt41h5c2b3ajt7gcq08vap3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:58:16] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:58:18] "[37mGET /logout HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:58:19] "[32mPOST /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Apr/2021 14:58:19] "[37mGET / HTTP/1.1[0m" 200 -
