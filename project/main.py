@@ -56,6 +56,7 @@ def dashboard():
                 if event['summary'].split(' ')[0] == 'PreReminder' \
                     or event['summary'].split(' ')[0] == 'PREReminder':
                         # SaveID.append(event['id'])
+                        cont_no = event['summary'].split(' ')[::-1][0]
                         flash(f'Messsage send with in 4hr to {cont_no}') 
                         status = 'PreReminder'
 
