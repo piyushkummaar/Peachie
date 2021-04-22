@@ -7,15 +7,10 @@ from twilio.rest import Client
 from werkzeug.exceptions import HTTPException
 import logging
 import time
-import os
 import configparser
 
 config = configparser.ConfigParser()
 
-try:
-    os.makedirs("logs")
-except FileExistsError:
-    pass
 
 fname = 'logs/log'+datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")+'.log'
 logging.basicConfig(filename=fname, level=logging.INFO)
