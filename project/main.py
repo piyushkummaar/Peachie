@@ -20,18 +20,28 @@ main = Blueprint('main', __name__)
 config.read('project/config/creds.ini')
 
 # Twilio Credentials
-account_sid = config.get("twilio.com","account_sid")
-auth_token = config.get("twilio.com","auth_token")
+account_sid = 'AC079c58693b2f2b23330d76a774f40000'#config.get("twilio.com","account_sid")
+auth_token = '89be68f1d9bde7427e8750919bc27bdd'#config.get("twilio.com","auth_token")
 
 client = Client(account_sid, auth_token)
 
 SaveID = []
 
+def send_sms(cont_no):
+    message = client.messages \
+            .create(
+                body='description',
+                from_='+18183505192',
+                to='+1'+cont_no
+            )
+    return message.sid, message.status  
+
+
 @main.route('/')
 def index():
     return render_template('index.html')
 
-@main.route('/dashboard')
+@main.route('/dashboard',methods=["GET","POST"])
 @login_required
 def dashboard():
     try:
@@ -43,61 +53,51 @@ def dashboard():
         logging.info(events)
         print('[INFO] Execute Successfully.')
         status_list = []
+        if request.method == "POST":
+            event_type = request.form.get("selecttype")
+            events = getEvents.main_envid(event_type)
+            if events == 'No upcoming events found.':
+                return render_template('dashboard.html', name=current_user.name,title=title)
+            else: 
+                for event in events:
+                    idcontainer.append(event['id'])
+                    if event['summary'].split(' ')[0] == 'PreReminder' \
+                        or event['summary'].split(' ')[0] == 'PREReminder' or event['summary'].split(' ')[0] == 'Prereminder' \
+                            or event['summary'].split(' ')[0] == 'prereminder' :
+                            # SaveID.append(event['id'])
+                            cont_no = event['summary'].split(' ')[::-1][0]
+                            # call function
+                            flash(f'Messsage send with in 24hr to {cont_no}') 
+                            status = 'PreReminder'
+
+                    elif event['summary'].split(' ')[0] == 'PostReminder'\
+                        or event['summary'].split(' ')[0] == 'POSTReminder' or event['summary'].split(' ')[0] == 'Postreminder':
+                            cont_no = event['summary'].split(' ')[::-1][0]
+                            # call function
+                            flash(f'Messsage send with in 24hr to {cont_no}') 
+                            status = 'PostReminder' 
+                    elif event['summary'].split(' ')[0] == 'Send' or event['summary'].split(' ')[0] == 'SEND':
+                        cont_no = event['summary'].split(' ')[1]
+                        send_sms(cont_no)
+                        # print(idcontainer)
+                        if event['id'] in idcontainer:
+                            flash(f'Messsage already sended to the {cont_no}')
+                        else:
+                            if not event['description']:
+                                pass
+                                flash(f'Messsage sended to the {cont_no}')
+                            flash(f'Messsage sended to the {cont_no}')
+                            status = 'Send'
+                return render_template('dashboard.html', name=current_user.name,context=events,title=title,status=status_list,selectval=event_type)
         if events == 'No upcoming events found.':
             return render_template('dashboard.html', name=current_user.name,title=title)
         else: 
-            for event in events:
-                idcontainer.append(event['id'])
-                if event['summary'].split(' ')[0] == 'PreReminder' \
-                    or event['summary'].split(' ')[0] == 'PREReminder':
-                        # SaveID.append(event['id'])
-                        cont_no = event['summary'].split(' ')[::-1][0]
-                        flash(f'Messsage send with in 4hr to {cont_no}') 
-                        status = 'PreReminder'
-
-                elif event['summary'].split(' ')[0] == 'PostReminder'\
-                    or event['summary'].split(' ')[0] == 'POSTReminder':
-                        cont_no = event['summary'].split(' ')[::-1][0]
-                        # message = client.messages \
-                        #             .create(
-                        #                 body='description',
-                        #                 from_='+18183505192',
-                        #                 to='+917807445246'
-                        #             )    
-                        # print(message.sid," : ",event['id'])
-                        flash(f'Messsage sended to the {cont_no}') 
-                        status = 'PostReminder' 
-                elif event['summary'].split(' ')[0] == 'Send':
-                    cont_no = event['summary'].split(' ')[1]
-                    print(idcontainer)
-                    if event['id'] in idcontainer:
-                        flash(f'Messsage already sended to the {cont_no}')
-                    else:
-                        if not event['description']:
-                            pass
-                            # message = client.messages \
-                            #             .create(
-                            #                 body='Message',
-                            #                 from_='+18183505192',
-                            #                 to='+91'+cont_no
-                            #             )
-                            # idcontainer.append(event['id'])
-                            # print(message.sid)
-                            flash(f'Messsage sended to the {cont_no}')
-                        # message = client.messages \
-                        #             .create(
-                        #                 body=event['description'],
-                        #                 from_='+18183505192',
-                        #                 to='+91'+cont_no
-                        #             )    
-                        # idcontainer.append(event['id'])
-                        # print(message.sid)
-                        flash(f'Messsage sended to the {cont_no}')
-                        # status = 'Send'
             return render_template('dashboard.html', name=current_user.name,context=events,title=title,status=status_list) 
     except Exception as e:
         print('[ERROR] ',e)
         logging.error(e)
+    
+        # print(request.get("selecttype"))    
     return render_template('dashboard.html', name=current_user.name,title=title)
 
 @main.route('/edit/<string:cal_id>', methods=['GET','POST'])

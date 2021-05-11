@@ -25,6 +25,24 @@
       <div class="col-md-4">
         <button type="button" class="btn btn-primary btn-lg btn-block">My Calender</button>
         <hr>
+        <form class="form-inline" action="" method="POST">
+          <div class="row ">
+              <div class="form-group col-md-10">
+                <!-- <label for="exampleFormControlSelect1">Select Events Type</label> -->
+                <select class="form-control" id="exampleFormControlSelect1" name="selecttype">
+                  <option>--Select--</option>
+                  <option value="primary">Primary</option>
+                  <option value="c_a99k2hl4qev47mbm0e4sjkbrp8@group.calendar.google.com">FOM - Non Paid Reminders</option>
+                  <option value="c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com">FOM - Paid Reminders</option>
+                  <option value="c_9h05u39ads8bqt1oln2r4bna3s@group.calendar.google.com">FOM - Send</option>
+                </select>
+              </div>
+            <div class="col-md-2">
+              <button class="btn btn-primary float-right" type="submit">Get</button>
+            </div>
+          </div>
+        </form>
+          <br>
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action active">All Events <i class="fa fa-calendar"></i></a>             
             {% if context %}
@@ -38,11 +56,12 @@
       </ul>
       </div>
       <div class="col-md-8">
+        
         <button type="button" class="btn btn-primary btn-lg btn-block">List of all Targets events</button> 
+          
         <hr>
         {% if context %}
         {% for data in context %}
-        {% if data.summary.split(' ')[0] == 'Send' or data.summary.split(' ')[0] == 'PREReminder' or data.summary.split(' ')[0] == 'PreReminder' or data.summary.split(' ')[0] == 'POSTReminder' or data.summary.split(' ')[0] == 'PostReminder'%}
           <div class="list-group mt-4">
             <div href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
@@ -67,7 +86,6 @@
               </div>
             </a>
         </div>
-        {% endif %}
         {% endfor %}  
         {%else%}
         <div class="list-group mt-4">
