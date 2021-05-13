@@ -1,0 +1,68 @@
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786923891000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:54:34.449Z', 'summary': 'Send  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:24:36] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786923891000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:54:34.449Z', 'summary': 'Send  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786923891000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:54:34.449Z', 'summary': 'Send  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:24:45] "[37mPOST /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:24:47] "[37mPOST /dashboard HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786923891000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:54:34.449Z', 'summary': 'Send  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+ERROR:root:<HttpError 404 when requesting https://www.googleapis.com/calendar/v3/calendars/--Select--/events?timeMin=2021-05-13T11%3A54%3A52.363948Z&maxResults=10&singleEvents=true&orderBy=startTime&alt=json returned "Not Found". Details: "Not Found">
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:24:53] "[37mPOST /dashboard HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786923891000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:54:34.449Z', 'summary': 'Send  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/AC079c58693b2f2b23330d76a774f40000/Messages.json
+INFO:twilio.http_client:PAYLOAD: {'To': '+1', 'From': '+917807445246', 'Body': 'Send  Randy Narciso - 780-744-5246'}
+INFO:twilio.http_client:POST Response: 400 {"code": 21211, "message": "The 'To' number +1 is not a valid phone number.", "more_info": "https://www.twilio.com/docs/errors/21211", "status": 400}
+ERROR:root:
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/AC079c58693b2f2b23330d76a774f40000/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: The 'To' number +1 is not a valid phone number.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21211[0m
+
+
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:24:58] "[37mPOST /dashboard HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786923891000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:54:34.449Z', 'summary': 'Send  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/AC079c58693b2f2b23330d76a774f40000/Messages.json
+INFO:twilio.http_client:PAYLOAD: {'To': '+1', 'From': '+917807445246', 'Body': 'Send  Randy Narciso - 780-744-5246'}
+INFO:twilio.http_client:POST Response: 400 {"code": 21211, "message": "The 'To' number +1 is not a valid phone number.", "more_info": "https://www.twilio.com/docs/errors/21211", "status": 400}
+ERROR:root:
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/AC079c58693b2f2b23330d76a774f40000/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: The 'To' number +1 is not a valid phone number.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21211[0m
+
+
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:25:07] "[37mPOST /dashboard HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786923891000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:54:34.449Z', 'summary': 'Send  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/AC079c58693b2f2b23330d76a774f40000/Messages.json
+INFO:twilio.http_client:PAYLOAD: {'To': '+1', 'From': '+917807445246', 'Body': 'Send  Randy Narciso - 780-744-5246'}
+INFO:twilio.http_client:POST Response: 400 {"code": 21211, "message": "The 'To' number +1 is not a valid phone number.", "more_info": "https://www.twilio.com/docs/errors/21211", "status": 400}
+ERROR:root:
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/AC079c58693b2f2b23330d76a774f40000/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: The 'To' number +1 is not a valid phone number.[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/21211[0m
+
+
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:25:15] "[37mPOST /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:25:15] "[37mGET /static/sms4_43518.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\USER\\OneDrive\\Desktop\\vcodify\\Peachie GREMINDER\\MainCode\\DEPLOY\\project\\main.py', reloading

@@ -20,21 +20,25 @@ main = Blueprint('main', __name__)
 config.read('project/config/creds.ini')
 
 # Twilio Credentials
-account_sid = 'AC079c58693b2f2b23330d76a774f40000'#config.get("twilio.com","account_sid")
-auth_token = '89be68f1d9bde7427e8750919bc27bdd'#config.get("twilio.com","auth_token")
-
-client = Client(account_sid, auth_token)
+account_sid = 'AC079c58693b2f2b23330d76a774f40000'
+auth_token = '0690d01528f8844283784625d34214a3'
 
 SaveID = []
 
-def send_sms(cont_no):
-    message = client.messages \
-            .create(
-                body='description',
-                from_='+18183505192',
-                to='+1'+cont_no
-            )
-    return message.sid, message.status  
+def send_sms(cont_no,description,id):
+    if id in SaveID:
+        return False
+    else:
+        client = Client(account_sid, auth_token)
+        message = client.messages \
+                        .create(
+                            body=description,
+                            from_='+18183505192',
+                            to='+91'+cont_no
+
+                        )
+        SaveID.append(id)                
+        return True  
 
 
 @main.route('/')
@@ -74,20 +78,21 @@ def dashboard():
                         or event['summary'].split(' ')[0] == 'POSTReminder' or event['summary'].split(' ')[0] == 'Postreminder':
                             cont_no = event['summary'].split(' ')[::-1][0]
                             # call function
-                            flash(f'Messsage send with in 24hr to {cont_no}') 
+                            stat = send_sms(cont_no,event['description'],event['id'])
+                            if stat == True:
+                                flash(f'Messsage sended to {cont_no}')  
+                            else:
+                                flash(f'Messsage already sended to {cont_no}')
                             status = 'PostReminder' 
                     elif event['summary'].split(' ')[0] == 'Send' or event['summary'].split(' ')[0] == 'SEND':
-                        cont_no = event['summary'].split(' ')[1]
-                        send_sms(cont_no)
-                        # print(idcontainer)
-                        if event['id'] in idcontainer:
-                            flash(f'Messsage already sended to the {cont_no}')
+                        cont_no = event['summary'].split(' ')[::-1][0]
+                        stat = send_sms(cont_no,event['description'],event['id'])
+                        print(stat)
+                        if stat == True:
+                            flash(f'Messsage sended to {cont_no}')  
                         else:
-                            if not event['description']:
-                                pass
-                                flash(f'Messsage sended to the {cont_no}')
-                            flash(f'Messsage sended to the {cont_no}')
-                            status = 'Send'
+                            flash(f'Messsage already sended to {cont_no}')
+                        status = 'Send'
                 return render_template('dashboard.html', name=current_user.name,context=events,title=title,status=status_list,selectval=event_type)
         if events == 'No upcoming events found.':
             return render_template('dashboard.html', name=current_user.name,title=title)

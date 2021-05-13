@@ -1,0 +1,23 @@
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:18:23] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:18:26] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:18:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+ERROR:root:HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001B37B398F40>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:18:33] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+INFO:root:No upcoming events found.
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:20:24] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:20:26] "[37mGET /static/sms4_43518.ico HTTP/1.1[0m" 200 -
+INFO:root:No upcoming events found.
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:20:34] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:20:34] "[37mGET /static/sms4_43518.ico HTTP/1.1[0m" 200 -
+INFO:root:No upcoming events found.
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:21:34] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:21:34] "[37mGET /static/sms4_43518.ico HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786749242000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:51:39.800Z', 'summary': 'Postreminder  Randy Narciso - 310-804-3279', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:21:43] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:21:43] "[37mGET /static/sms4_43518.ico HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786777386000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:52:07.944Z', 'summary': 'Postreminder  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:22:09] "[37mGET /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:22:09] "[37mGET /static/sms4_43518.ico HTTP/1.1[0m" 200 -
+INFO:root:[{'kind': 'calendar#event', 'etag': '"3241786777386000"', 'id': '67aertrgo6nr8914hffe6qbu1m', 'status': 'confirmed', 'htmlLink': 'https://www.google.com/calendar/event?eid=NjdhZXJ0cmdvNm5yODkxNGhmZmU2cWJ1MW0gY182YzZ1ZTIwY3VnZmlzdjdyaDc5c2dlNzVnZ0Bn', 'created': '2021-05-13T04:27:13.000Z', 'updated': '2021-05-13T11:52:07.944Z', 'summary': 'Postreminder  Randy Narciso - 780-744-5246', 'description': 'Hello', 'creator': {'email': 'randy@fightonmentality.com'}, 'organizer': {'email': 'c_6c6ue20cugfisv7rh79sge75gg@group.calendar.google.com', 'displayName': 'FOM - Paid Reminders', 'self': True}, 'start': {'dateTime': '2021-05-13T14:45:00-07:00'}, 'end': {'dateTime': '2021-05-13T15:45:00-07:00'}, 'iCalUID': '67aertrgo6nr8914hffe6qbu1m@google.com', 'sequence': 1, 'reminders': {'useDefault': False}, 'eventType': 'default'}]
+INFO:werkzeug:127.0.0.1 - - [13/May/2021 17:22:19] "[37mPOST /dashboard HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\USER\\OneDrive\\Desktop\\vcodify\\Peachie GREMINDER\\MainCode\\DEPLOY\\project\\main.py', reloading
